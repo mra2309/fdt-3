@@ -23,3 +23,7 @@
 - db(landingpage) : nsone
 - db(billingbox)  : billingbox
 
+## credential billingbox ##
+- username    : adiferiismail@gmail.com
+- password    : password
+
