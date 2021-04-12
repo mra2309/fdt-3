@@ -4,32 +4,28 @@ services:
     php:
       build:
         context: .
-        dockerfile: Dockerfile
+        dockerfile: "./fdt-s2/admin/Dockerfile"
       container_name: php 
       ports: 
       - "8004:80"
       volumes: 
-      - "./fdt-s2/src:/var/www/html/"
+      - "./fdt-s2/admin/src:/var/www/html/"
       links:
       - "db:db"
-      depends_on:
-      - db
       networks:
       - network-billingbox
       
     php2:
       build:
         context: .
-        dockerfile: Dockerfile
+        dockerfile: "./fdt-s2/landing/Dockerfile"
       container_name: php2
       ports: 
       - "80:80"
       volumes: 
-      - "./fdt-s2/lp:/var/www/html"
+      - "./fdt-s2/landing/src:/var/www/html/"
       links:
       - "db:db"
-      depends_on:
-      - db
       networks:
       - network-billingbox
       
