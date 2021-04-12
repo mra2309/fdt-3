@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+    php:
+      image: 0895421436134/billingbox-landing:0.0.1
+      container_name: php 
+      ports: 
+      - "8004:80"
+      volumes: 
+      - "./fdt-s2/src:/var/www/html/"
+      links:
+      - "db:db"
+      depends_on:
+      - db
+      networks:
+      - network-billingbox
+      
+    php2:
+      image: 0895421436134/billingbox-landing:0.0.1
+      container_name: php2
+      ports: 
+      - "80:80"
+      volumes: 
+      - "./fdt-s2/lp:/var/www/html"
+      links:
+      - "db:db"
+      depends_on:
+      - db
+      networks:
+      - network-billingbox
+      
+    db:
+      image: mysql
+      command: --default-authentication-plugin=mysql_native_password
+      restart: always
+      container_name: db
+      environment:
+      - MYSQL_ROOT_PASSWORD=toor
+      volumes:
+      - mysql-data:/var/lib/mysql
+      networks:
+      - network-billingbox
+
+    adminer:
+      image: adminer
+      restart: always
+      container_name: adimer
+      ports:
+        - 8080:8080
+      networks:
+      - network-billingbox
+
+networks:
+   network-billingbox:
+    driver: bridge
+
+volumes:
+  mysql-data:
