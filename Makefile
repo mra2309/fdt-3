@@ -1,10 +1,16 @@
-install : start-recreate start-compose start-restore
+install : start-create start-compose start-restore
+
+reinstall : start-recreate start-compose start-restore
 
 start :  start-compose
 
 stop :  stop-compose
 
+start-create:
+	git clone https://github.com/mra2309/fdt-s2.git
+
 start-recreate:
+	rm -rf fdt-s2
 	git clone https://github.com/mra2309/fdt-s2.git
 
 start-compose: 
@@ -14,4 +20,4 @@ stop-compose:
 	docker-compose down
 
 start-restore:
-	docker exec -i some-mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < /fdt-s2l/all.sql
+	docker exec -i db sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < /fdt-s2/all.sql
