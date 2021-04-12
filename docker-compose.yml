@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
     php:
-      image: 0895421436134/billingbox-landing:0.0.1
+      build:
+        context: .
+        dockerfile: Dockerfile
       container_name: php 
       ports: 
       - "8004:80"
@@ -16,7 +18,9 @@ services:
       - network-billingbox
       
     php2:
-      image: 0895421436134/billingbox-landing:0.0.1
+      build:
+        context: .
+        dockerfile: Dockerfile
       container_name: php2
       ports: 
       - "80:80"

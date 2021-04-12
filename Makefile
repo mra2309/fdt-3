@@ -20,4 +20,4 @@ stop-compose:
 	docker-compose down
 
 start-restore:
-	docker exec -i db sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < /fdt-s2/all.sql
+	docker exec -i db sh -c 'exec mysql -uroot -p"toor"' < fdt-s2/all.sql
