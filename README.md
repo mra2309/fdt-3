@@ -29,3 +29,7 @@
 - username        : adiferiismail@gmail.com
 - password        : password
 
+
+## note ##
+- untuk penggunaan port 80 (Landing Page) perangkat harus terkoneksi dengan internet karena asset menggunakan google font 
+
