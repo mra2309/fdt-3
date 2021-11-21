@@ -5,6 +5,7 @@
 - pastikan di device sudah terinstall docker 
 - untuk install langsung bisa menggunakan terminal dengan perintah "make install"
 - jika gagal atau terkendala anda bisa reinstall dengan perintah  "make reinstall"
+- jika sudah selesai maka bisa langsung untuk membuka localhost pada browser
 - untuk mematikan service docker menggunakan perintah "make stop"
 - untuk mejalankan lagi menggunakan perintah "make start " 
 
