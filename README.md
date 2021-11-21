@@ -24,6 +24,7 @@
 - db(billingbox)  : billingbox
 
 ## credential billingbox ##
-- username    : adiferiismail@gmail.com
-- password    : password
+- admin login url : http://localhost:8004/bb-admin/index
+- username        : adiferiismail@gmail.com
+- password        : password
 
